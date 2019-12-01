@@ -1,3 +1,4 @@
+let secretfunction = true;
 let show = true;
 let oldx
 let oldy;
@@ -321,8 +322,11 @@ function textThings()
   {
    fill(200,255,0);
    textSize(20);
-   text("P", W/4,H/12)
-   text("E", W/2+W/4,H/12);
+   if (secretfunction)
+   {
+   	text("P", W/4,H/12)
+   	text("E", W/2+W/4,H/12);
+   }
    textSize(25);
    text(scorePressure.toFixed(0),W/4,H/12+H/20);
    text(eps.toFixed(0), W/2+W/4, H/12+H/20);
@@ -512,5 +516,9 @@ function keyPressed() {
   if (key === 's' || key === 'ы')
   {
     show = !show;
+  }
+  if( key === 'b' || key === 'B' || key === 'и' || key === 'И')
+  {
+	  secretfunction = !secretfunction;
   }
 }
