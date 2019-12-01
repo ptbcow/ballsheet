@@ -9,7 +9,59 @@
 
   </head>
   <body>
-    <script src="sketch.js"></script>
+      
+      <script src="sketch.js"></script>
+      
+    <div id = "leaderboard">
+    <table class="container">
+	<thead>
+		<tr>
+			<th><h1>Name</h1></th>
+			<th><h1>Time</h1></th>
+			<th><h1>Screenshot</h1></th>
+			<th><h1>Video</h1></th>
+		</tr>
+	</thead>
+	<tbody>
+      <tr>
+          <td><h1>Cilyuri</h1></td>
+			<td><h1>24.62</h1></td>
+          <td><a href = "https://media.discordapp.net/attachments/650268120786796544/650780871837614080/unknown.png"></a></td>
+			<td>???</td>
+      </tr>
+		<tr>
+          <td><h1>Taru</h1></td>
+			<td><h1>24.41</h1></td>
+          <td><a href = "https://puu.sh/EKErA/cb34b2f276.jpg"></a></td>
+			<td><a href = "https://puu.sh/EKErv/3c090c1698.mp4"></a></td>
+      </tr>
+      	 <tr>
+          <td><h1>Enrix</h1></td>
+			<td><h1>22.73</h1></td>
+          <td><a href = "https://i.imgur.com/9itnTvm.png"></a></td>
+			<td><a href = "https://cdn.discordapp.com/attachments/650268120786796544/650715122012127259/22.73.mp4"></a></td>
+      </tr>
+      
+	</tbody>
+</table>
+    
+    </div>
+    <div id = "hide"><h2>leaderboard</h2></div>
+        
+      <script type="text/javascript"> 
+        var flag = true;
+      document.getElementById("hide").onclick = function() { 
+        if (flag)
+        {
+          document.getElementById("leaderboard").style.display = "block";
+        }
+        else
+        {
+          document.getElementById("leaderboard").style.display = "none";
+        }
+        flag = !flag;
+      }  
+    </script>
   
 
 </body></html>
