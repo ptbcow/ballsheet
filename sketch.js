@@ -322,11 +322,10 @@ function textThings()
   {
    fill(200,255,0);
    textSize(20);
-   if (secretfunction)
-   {
+   
    	text("P", W/4,H/12)
    	text("E", W/2+W/4,H/12);
-   }
+   
    textSize(25);
    text(scorePressure.toFixed(0),W/4,H/12+H/20);
    text(eps.toFixed(0), W/2+W/4, H/12+H/20);
@@ -354,18 +353,20 @@ function textThings()
    }
   }
   
- fill(0,255,230);
- ellipse(W/20,H/20, W/16, W/16); 
- fill(0,0,0);
- textStyle(BOLD);
- text("R",W/20, H/20); 
-  
- fill(0,255,230);
- ellipse(W-W/20,H/20, W/16, W/16); 
- fill(0,0,0);
- textStyle(BOLD);
- text("S",W-W/20, H/20); 
+if (secretfunction)
+   {	
+	 fill(0,255,230);
+	 ellipse(W/20,H/20, W/16, W/16); 
+	 fill(0,0,0);
+	 textStyle(BOLD);
+	 text("R",W/20, H/20); 
 
+	 fill(0,255,230);
+	 ellipse(W-W/20,H/20, W/16, W/16); 
+	 fill(0,0,0);
+	 textStyle(BOLD);
+	 text("S",W-W/20, H/20); 
+   }
 }
 
 function makeEpsBalance()
