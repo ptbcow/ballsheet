@@ -29,7 +29,7 @@ let xpos = H/2;
 let ypos = W/2;
 let scorePressure = 1;
 let newdist = 0;
-let scorePrise = 25;
+let scorePrise = 35;
 let highScore = 0;
 let eps = 0;
 let ingame = true;
@@ -438,7 +438,7 @@ function checkCollision()
      let r = 1000*(newTime-lastpicktime).toFixed(3)
     reactions.push(r);
      
-    let cost = scorePrise+newdist/2;
+    let cost = scorePrise;
      if (r < 130)
      {
        cost = cost * (r/130);
