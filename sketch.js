@@ -441,7 +441,7 @@ function checkCollision()
     let cost = scorePrise+newdist/2;
      if (r < 130)
      {
-       cost = cost * (r/260);
+       cost = cost * (r/130);
      }
     ballcounter++;
     score+= cost;
