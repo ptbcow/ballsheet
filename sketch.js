@@ -1,4 +1,6 @@
+let alpha = 255;
 let secretfunction = true;
+let ballcolor = true;
 let show = true;
 let oldx
 let oldy;
@@ -110,6 +112,7 @@ function preload()
   eatsound = loadSound("bop.mp3");
 }
 function setup() {
+  frameRate(240);
   TARGETCOLOR = color(255,0,0);
   BACKGROUNDCOLOR = color(7,7,7);
   MOUSECOLOR = color(255,255,255);
@@ -247,7 +250,7 @@ function gameOverText()
    fill(250,150,200);
   
    text("Stats" ,W/placeleft,H-(H/heightlevel)*9);
-   text("Sexy",W/placeleft, H-(H/heightlevel)*1);
+   text("try C B R S keys",W/placeleft, H-(H/heightlevel)*1);
    textStyle(ITALIC);
    fill(0,255,200);
    text("Time" ,W/placeleft,H-(H/heightlevel)*8);
@@ -320,7 +323,17 @@ function textThings()
  rect(W/6,H/6,W-W/3,H-H/3);
   if(show)
   {
-   fill(200,255,0);
+    
+    
+    if (!ballcolor)
+    {
+      alpha = 100;
+    }
+    else
+    {
+      alpha = 255;
+    }
+   fill(200,255,0, alpha);
    textSize(20);
    
    	text("P", W/4,H/12)
@@ -329,17 +342,17 @@ function textThings()
    textSize(25);
    text(scorePressure.toFixed(0),W/4,H/12+H/20);
    text(eps.toFixed(0), W/2+W/4, H/12+H/20);
-   fill(0,255,230);
+   fill(0,255,230, alpha);
    textSize(50);
    textStyle(BOLD);
    text("BallSheet game by dphdmn",W/2,H-H/12);
    textSize(25);
-   fill(250,150,200);
-   text("v4 EmoDream",W/2,H-H/25);
+   fill(250,150,200, alpha);
+   text("v4.2 EmoDream",W/2,H-H/25);
    
-   fill(200-balance,balance*3+150,0);
+   fill(200-balance,balance*3+150,0, alpha);
    text(balance.toFixed(0),W/2,H-H/7);
-   fill(300-score,score*2,0);
+   fill(300-score,score*2,0, alpha);
    textSize(40);
    text(int(score), W/2, H/12);
     
@@ -347,7 +360,7 @@ function textThings()
    {
      textSize(17);
      let r = reactions[reactions.length-1]
-     fill(3*r/20,150-r/20,0);
+     fill(3*r/20,150-r/20,0, alpha);
      text(int(r),W/2, H/12+H/18);
      textSize(40);
    }
@@ -355,13 +368,13 @@ function textThings()
   
 if (secretfunction)
    {	
-	 fill(0,255,230);
+	 fill(0,255,230, alpha);
 	 ellipse(W/20,H/20, W/16, W/16); 
 	 fill(0,0,0);
 	 textStyle(BOLD);
 	 text("R",W/20, H/20); 
 
-	 fill(0,255,230);
+	 fill(0,255,230, alpha);
 	 ellipse(W-W/20,H/20, W/16, W/16); 
 	 fill(0,0,0);
 	 textStyle(BOLD);
@@ -384,7 +397,7 @@ function makeBalls()
 {
   fill(MOUSECOLOR);
   ellipse(mouseX, mouseY, CURSORSIZE, CURSORSIZE);
-  if (show)
+  if (show && ballcolor)
   {
     fill(200-balance,balance*3+150,0);
   }
@@ -522,4 +535,9 @@ function keyPressed() {
   {
 	  secretfunction = !secretfunction;
   }
+  if (key === 'c' || key === 'C' || key === 'с' || key === 'С')
+  {
+    ballcolor = !ballcolor;
+  }
+  
 }
