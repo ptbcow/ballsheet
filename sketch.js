@@ -1,3 +1,4 @@
+let bps;
 let outlierconst = 0.07;
 let newr = []
 let ravg = 9999;
@@ -141,8 +142,8 @@ function draw() {
  else //gameover
  {
    background(BLACK);
-   makeGraph();
    setHighScores();
+   makeGraph();
    gameOverText();
    
 }
@@ -218,17 +219,10 @@ function setHighScores()
      maxepsHS = bestEPS;
      storeItem(3, 1000*maxepsHS);
    }
-   if(newTime > 2 && ballcounter > 2)
-     {
-     if ((ballcounter/newTime) > bpsHS)
-     {
-
-         bpsHS = (ballcounter/newTime); 
-         storeItem(4, 1000*bpsHS);
-     }
-   }
-  
    
+  
+  
+   newr.length = 0;
    for (let i = 0;i<=reactions.length-1;i++)
    {
       newr.push(reactions[i]);
@@ -243,10 +237,26 @@ function setHighScores()
         sum+=newr[i];
    }
    ravg = int(sum/(ballcounter-2*outliers));
+   if(ravg == 0)
+   {
+     ravg = 9999;
+   }
+  
+   bps = 1/(ravg/1000);
+  
+  if(newTime > 2 && ballcounter > 2)
+     {
+     if (bps > bpsHS)
+     {
+
+         bpsHS = bps; 
+         storeItem(4, 1000*bpsHS);
+     }
+   }
   
    if (ravg < reactionHS)
    {
-     reactionHS = 1000*ravg;
+     reactionHS = ravg;
      storeItem(5, reactionHS);
    }
   
@@ -298,11 +308,11 @@ function gameOverText()
    fill(0,255,200);
    textStyle(NORMAL);
    text((newTime).toFixed(2),W/placemiddle,H-(H/heightlevel)*8); 
-   text(ravg,W/placemiddle,H-(H/heightlevel)*7);
-   text(int(1000*(newTime/ballcounter).toFixed(3)), W/placemiddle, H-(H/heightlevel)*6);
+   text(bps.toFixed(2),W/placemiddle,H-(H/heightlevel)*7);
+   text(ravg, W/placemiddle, H-(H/heightlevel)*6);
    text(ballcounter, W/placemiddle, H-(H/heightlevel)*5);
-   text(overall.toFixed(2), W/placemiddle, H-(H/heightlevel)*4);
-   text(bestEPS.toFixed(2), W/placemiddle, H-(H/heightlevel)*3);
+   text(overall.toFixed(0), W/placemiddle, H-(H/heightlevel)*4);
+   text(bestEPS.toFixed(0), W/placemiddle, H-(H/heightlevel)*3);
    text((overall/newTime).toFixed(2), W/placemiddle, H-(H/heightlevel)*2);
   
    let placeright = 8;
@@ -315,8 +325,8 @@ function gameOverText()
    text(bpsHS.toFixed(2),W-W/placeright,H-(H/heightlevel)*7);
    text(reactionHS, W-W/placeright, H-(H/heightlevel)*6);
    text(ballsHS, W-W/placeright, H-(H/heightlevel)*5);
-   text(eatenHS.toFixed(2), W-W/placeright,H-(H/heightlevel)*4);
-   text(maxepsHS.toFixed(2), W-W/placeright,H-(H/heightlevel)*3); 
+   text(eatenHS.toFixed(0), W-W/placeright,H-(H/heightlevel)*4);
+   text(maxepsHS.toFixed(0), W-W/placeright,H-(H/heightlevel)*3); 
    text(hs_avg.toFixed(2), W-W/placeright,H-(H/heightlevel)*2); 
    //textAlign(CENTER,CENTER);
   
@@ -377,7 +387,7 @@ function textThings()
    text("BallSheet game by dphdmn",W/2,H-H/12);
    textSize(25);
    fill(250,150,200, alpha);
-   text("v4.3 EmoDream",W/2,H-H/25);
+   text("v4.2 EmoDream",W/2,H-H/25);
    
    fill(200-balance,balance*3+150,0, alpha);
    text(balance.toFixed(0),W/2,H-H/7);
