@@ -387,7 +387,7 @@ function textThings()
    text("BallSheet game by dphdmn",W/2,H-H/12);
    textSize(25);
    fill(250,150,200, alpha);
-   text("v4.2 EmoDream",W/2,H-H/25);
+   text("v4.3r EmoDream",W/2,H-H/25);
    
    fill(200-balance,balance*3+150,0, alpha);
    text(balance.toFixed(0),W/2,H-H/7);
