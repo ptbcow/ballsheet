@@ -1,3 +1,6 @@
+let outlierconst = 0.07;
+let newr = []
+let ravg = 9999;
 let alpha = 255;
 let secretfunction = true;
 let ballcolor = true;
@@ -137,14 +140,17 @@ function draw() {
  }
  else //gameover
  {
+   background(BLACK);
+   makeGraph();
    setHighScores();
    gameOverText();
-   makeGraph();
+   
 }
   
   
   function makeGraph()
   {
+    
          let max_of_array = Math.max.apply(Math, reactions);
          let min_of_array = Math.min.apply(Math, reactions);
          let xup = W/20;
@@ -221,11 +227,30 @@ function setHighScores()
          storeItem(4, 1000*bpsHS);
      }
    }
-   if (1000*(newTime/ballcounter).toFixed(3) < reactionHS)
+  
+   
+   for (let i = 0;i<=reactions.length-1;i++)
    {
-     reactionHS = 1000*(newTime/ballcounter).toFixed(3);
+      newr.push(reactions[i]);
+   }
+  
+   newr.sort();
+   let outliers = int((ballcounter*outlierconst));
+   let sum = 0;
+  
+   for (let i = outliers; i<=ballcounter-outliers-1;i++)
+   {
+        sum+=newr[i];
+   }
+   ravg = int(sum/(ballcounter-2*outliers));
+  
+   if (ravg < reactionHS)
+   {
+     reactionHS = 1000*ravg;
      storeItem(5, reactionHS);
    }
+  
+  
   if (ballcounter > ballsHS)
   {
     ballsHS = ballcounter;
@@ -233,9 +258,13 @@ function setHighScores()
   }
 }
 
+  
 function gameOverText()
 {
-   background(BLACK);
+   
+  
+ 
+  
    fill(255,0,50);
    textSize(55);
    textStyle(BOLD);
@@ -269,7 +298,7 @@ function gameOverText()
    fill(0,255,200);
    textStyle(NORMAL);
    text((newTime).toFixed(2),W/placemiddle,H-(H/heightlevel)*8); 
-   text((ballcounter/newTime).toFixed(2),W/placemiddle,H-(H/heightlevel)*7);
+   text(ravg,W/placemiddle,H-(H/heightlevel)*7);
    text(int(1000*(newTime/ballcounter).toFixed(3)), W/placemiddle, H-(H/heightlevel)*6);
    text(ballcounter, W/placemiddle, H-(H/heightlevel)*5);
    text(overall.toFixed(2), W/placemiddle, H-(H/heightlevel)*4);
@@ -348,7 +377,7 @@ function textThings()
    text("BallSheet game by dphdmn",W/2,H-H/12);
    textSize(25);
    fill(250,150,200, alpha);
-   text("v4.2 EmoDream",W/2,H-H/25);
+   text("v4.3 EmoDream",W/2,H-H/25);
    
    fill(200-balance,balance*3+150,0, alpha);
    text(balance.toFixed(0),W/2,H-H/7);
