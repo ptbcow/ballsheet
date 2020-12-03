@@ -53,6 +53,8 @@ let BLACK;
 
 let eatsound;
 
+let newCursor=true;
+
 function gameSetup()
 { 
   ballcounter = 0;
@@ -387,7 +389,7 @@ function textThings()
    text("BallSheet by dphdmn",W/2,H-H/12);
    textSize(25);
    fill(250,150,200, alpha);
-   text("v6.5 for ian",W/2,H-H/25);
+   text("v6.6 for ian",W/2,H-H/25);
    
    fill(200-balance,balance*3+150,0, alpha);
    text(balance.toFixed(0),W/2,H-H/7);
@@ -435,7 +437,7 @@ function makeEpsBalance()
 function makeBalls()
 {
   fill(MOUSECOLOR);
- // ellipse(mouseX, mouseY, CURSORSIZE, CURSORSIZE);
+ if (!newCursor) {ellipse(mouseX, mouseY, CURSORSIZE, CURSORSIZE);}
   if (show && ballcolor)
   {
     fill(200-balance,balance*3+150,0);
@@ -539,7 +541,14 @@ function mousePressed()
     gameSetup();
   }
 }
-
+function checkCur(){
+	if (newCursor){
+		 cursor('cursor.cur', 32, 32);
+	}
+	else{
+	noCursor();
+	}
+}
 function keyPressed() {
   if (key === ' ' || key === 'r' || key === 'к') {
     score=-1; 
@@ -566,6 +575,10 @@ function keyPressed() {
      gameOverText();
    }*/
   }
+	if (key === 'o'){
+	newCursor=!newCursor;
+		checkCur();
+	}
   if (key === 's' || key === 'ы')
   {
     show = !show;
