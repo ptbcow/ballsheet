@@ -387,7 +387,7 @@ function textThings()
    text("BallSheet game by dphdmn",W/2,H-H/12);
    textSize(25);
    fill(250,150,200, alpha);
-   text("v6 for ian",W/2,H-H/25);
+   text("v6.1 for ian",W/2,H-H/25);
    
    fill(200-balance,balance*3+150,0, alpha);
    text(balance.toFixed(0),W/2,H-H/7);
@@ -468,7 +468,7 @@ function checkCollision()
   
    if (!noCheese)
    {     
-     startTime = new Date();
+     startTime = performance.now();
      noCheese=true;
      
    }
