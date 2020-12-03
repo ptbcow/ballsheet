@@ -78,7 +78,7 @@ function gameSetup()
 
 
 function preload()
-{
+{	cursor('cursor.cur');
    if (getItem(0) != null)
    {
      highScore = getItem(0)/1000;
@@ -435,7 +435,7 @@ function makeEpsBalance()
 function makeBalls()
 {
   fill(MOUSECOLOR);
-  ellipse(mouseX, mouseY, CURSORSIZE, CURSORSIZE);
+ // ellipse(mouseX, mouseY, CURSORSIZE, CURSORSIZE);
   if (show && ballcolor)
   {
     fill(200-balance,balance*3+150,0);
