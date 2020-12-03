@@ -122,7 +122,7 @@ function setup() {
   MOUSECOLOR = color(255,255,255);
   BLACK = color(0,0,0);
   createCanvas(W, H);
-  cursor('cursor.cur');//noCursor();
+  cursor('cursor.cur', 16, 16);//noCursor();
   textSize(30);
   textAlign(CENTER,CENTER);
   
@@ -384,10 +384,10 @@ function textThings()
    fill(0,255,230, alpha);
    textSize(30);
    textStyle(BOLD);
-   text("BallSheet",W/2,H-H/12);
+   text("BallSheet by dphdmn",W/2,H-H/12);
    textSize(25);
    fill(250,150,200, alpha);
-   text("v6.2 for ian",W/2,H-H/25);
+   text("v6.3 for ian",W/2,H-H/25);
    
    fill(200-balance,balance*3+150,0, alpha);
    text(balance.toFixed(0),W/2,H-H/7);
