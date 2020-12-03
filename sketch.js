@@ -78,7 +78,7 @@ function gameSetup()
 
 
 function preload()
-{	cursor('cursor.cur');
+{	
    if (getItem(0) != null)
    {
      highScore = getItem(0)/1000;
@@ -122,7 +122,7 @@ function setup() {
   MOUSECOLOR = color(255,255,255);
   BLACK = color(0,0,0);
   createCanvas(W, H);
-  noCursor();
+  cursor('cursor.cur');//noCursor();
   textSize(30);
   textAlign(CENTER,CENTER);
   
