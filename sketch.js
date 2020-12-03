@@ -113,7 +113,7 @@ function preload()
     ballsHS = getItem(6)/1000;   
    }
 
-  eatsound = loadSound("bop.mp3");
+  eatsound = loadSound("idk.wav");
 }
 function setup() {
   frameRate(240);
@@ -191,7 +191,7 @@ function timeAndPressure(noCheese)
 {
    if (noCheese)
    { 
-     newTime = (new Date() - startTime)/1000;
+     newTime = (performance.now() - startTime)/1000;
      hunger(newTime);
    }
 }
@@ -382,12 +382,12 @@ function textThings()
    text(scorePressure.toFixed(0),W/4,H/12+H/20);
    text(eps.toFixed(0), W/2+W/4, H/12+H/20);
    fill(0,255,230, alpha);
-   textSize(50);
+   textSize(30);
    textStyle(BOLD);
    text("BallSheet game by dphdmn",W/2,H-H/12);
    textSize(25);
    fill(250,150,200, alpha);
-   text("v4.3r EmoDream",W/2,H-H/25);
+   text("v6 for ian",W/2,H-H/25);
    
    fill(200-balance,balance*3+150,0, alpha);
    text(balance.toFixed(0),W/2,H-H/7);
@@ -478,9 +478,9 @@ function checkCollision()
     reactions.push(r);
      
     let cost = scorePrise;
-     if (r < 130)
+     if (r < 100)
      {
-       cost = cost * (r/130);
+       cost = cost * (r/100);
      }
     ballcounter++;
     score+= cost;
