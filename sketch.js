@@ -384,7 +384,7 @@ function textThings()
    fill(0,255,230, alpha);
    textSize(30);
    textStyle(BOLD);
-   text("BallSheet game by dphdmn",W/2,H-H/12);
+   text("BallSheet",W/2,H-H/12);
    textSize(25);
    fill(250,150,200, alpha);
    text("v6.1 for ian",W/2,H-H/25);
