@@ -126,13 +126,13 @@ function setup() {
   BACKGROUNDCOLOR = color(7,7,7);
   MOUSECOLOR = color(255,255,255);
   BLACK = color(0,0,0);
-	
-  cnv = createCanvas(W, H);
+	console.log('new');
+  createCanvas(W, H);
+  cnv = document.querySelector('defaultCanvas0');
+
   ctx = cnv.getContext('2d', { 
   desynchronized: true,
   preserveDrawingBuffer: true
-
-  // Other options. See below.
 });
 if (ctx.getContextAttributes().desynchronized) {
   console.log('Low latency canvas supported. Yay!');
