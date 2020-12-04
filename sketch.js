@@ -117,13 +117,31 @@ function preload()
 
   eatsound = loadSound("idk.wav");
 }
+
+let cnv;
+let ctx;
 function setup() {
   frameRate(1000);
   TARGETCOLOR = color(255,0,0);
   BACKGROUNDCOLOR = color(7,7,7);
   MOUSECOLOR = color(255,255,255);
   BLACK = color(0,0,0);
-  createCanvas(W, H);
+	
+  cnv = createCanvas(W, H);
+  ctx = canvas.getContext('2d', { 
+  desynchronized: true,
+  preserveDrawingBuffer: true
+
+  // Other options. See below.
+});
+if (ctx.getContextAttributes().desynchronized) {
+  console.log('Low latency canvas supported. Yay!');
+} else {
+  console.log('Low latency canvas not supported. Boo!');
+}
+
+	
+	
   cursor('cursor.cur', 32, 32);//noCursor();
   textSize(30);
   textAlign(CENTER,CENTER);
@@ -389,7 +407,7 @@ function textThings()
    text("BallSheet by dphdmn",W/2,H-H/12);
    textSize(25);
    fill(250,150,200, alpha);
-   text("v6.6 for ian",W/2,H-H/25);
+   text("v6.7 for ian",W/2,H-H/25);
    
    fill(200-balance,balance*3+150,0, alpha);
    text(balance.toFixed(0),W/2,H-H/7);
