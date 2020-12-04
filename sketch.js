@@ -128,7 +128,7 @@ function setup() {
   BLACK = color(0,0,0);
 	
   cnv = createCanvas(W, H);
-  ctx = canvas.getContext('2d', { 
+  ctx = cnv.getContext('2d', { 
   desynchronized: true,
   preserveDrawingBuffer: true
 
