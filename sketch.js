@@ -126,10 +126,10 @@ function setup() {
   BACKGROUNDCOLOR = color(7,7,7);
   MOUSECOLOR = color(255,255,255);
   BLACK = color(0,0,0);
-	console.log('new');
+	
+console.log('new2');
   createCanvas(W, H);
-  cnv = document.querySelector('defaultCanvas0');
-
+  cnv = document.getElementById('defaultCanvas0');
   ctx = cnv.getContext('2d', { 
   desynchronized: true,
   preserveDrawingBuffer: true
