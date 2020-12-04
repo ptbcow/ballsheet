@@ -134,13 +134,7 @@ console.log('new2');
   desynchronized: true,
   preserveDrawingBuffer: true
 });
-if (ctx.getContextAttributes().desynchronized) {
-  console.log('Low latency canvas supported. Yay!');
-} else {
-  console.log('Low latency canvas not supported. Boo!');
-}
 
-	
 	
   cursor('cursor.cur', 32, 32);//noCursor();
   textSize(30);
