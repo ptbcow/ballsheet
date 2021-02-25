@@ -25,7 +25,7 @@ let overall = 0;
 let EPSRANGE = 5;
 let W = 800;
 let H = 800;
-let BALLSIZE = 60;
+let BALLSIZE = 30;
 let CURSORSIZE = 30;
 let time;
 let score;
@@ -121,7 +121,7 @@ function preload()
 let cnv;
 let ctx;
 function setup() {
-  frameRate(2160);
+  frameRate(360);
   TARGETCOLOR = color(255,0,0);
   BACKGROUNDCOLOR = color(7,7,7);
   MOUSECOLOR = color(255,255,255);
