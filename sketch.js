@@ -25,7 +25,7 @@ let overall = 0;
 let EPSRANGE = 5;
 let W = 800;
 let H = 800;
-let BALLSIZE = 30;
+let BALLSIZE = 60;
 let CURSORSIZE = 30;
 let time;
 let score;
