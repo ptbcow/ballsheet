@@ -136,7 +136,7 @@ console.log('new2');
 });
 
 	
-  cursor('cursor.cur', 56, 56);//noCursor();
+  cursor('cursor.cur', 32, 32);//noCursor();
   textSize(30);
   textAlign(CENTER,CENTER);
   
@@ -555,7 +555,7 @@ function mousePressed()
 }
 function checkCur(){
 	if (newCursor){
-		 cursor('cursor.cur', 56, 56);
+		 cursor('cursor.cur', 32, 32);
 	}
 	else{
 	noCursor();
