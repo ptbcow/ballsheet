@@ -125,7 +125,7 @@ function setup() {
   TARGETCOLOR = color(255,255,255);
   BACKGROUNDCOLOR = color(0,0,0);
   MOUSECOLOR = color(255,255,255);
-  BLACK = color(0,0,0);
+  BLACK = color(255,255,255);
 	
 console.log('new2');
   createCanvas(W, H);
