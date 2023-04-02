@@ -121,9 +121,9 @@ function preload()
 let cnv;
 let ctx;
 function setup() {
-  frameRate(2160);
-  TARGETCOLOR = color(255,0,0);
-  BACKGROUNDCOLOR = color(7,7,7);
+  frameRate(2340);
+  TARGETCOLOR = color(255,255,255);
+  BACKGROUNDCOLOR = color(0,0,0);
   MOUSECOLOR = color(255,255,255);
   BLACK = color(0,0,0);
 	
