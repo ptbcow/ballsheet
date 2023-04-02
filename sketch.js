@@ -457,7 +457,7 @@ function makeBalls()
   }
   else
   {
-    fill(250,150,200);
+    fill(255,255,255);
   }
   ellipse(xpos, ypos, BALLSIZE, BALLSIZE);
 }
