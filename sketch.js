@@ -381,7 +381,7 @@ function textThings()
     
     if (!ballcolor)
     {
-      alpha = 100;
+      alpha = 255;
     }
     else
     {
