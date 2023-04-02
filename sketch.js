@@ -387,7 +387,7 @@ function textThings()
     {
       alpha = 255;
     }
-   fill(200,255,0, alpha);
+   fill(255,255,255, alpha);
    textSize(20);
    
    	text("P", W/4,H/12)
