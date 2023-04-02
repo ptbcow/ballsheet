@@ -123,9 +123,9 @@ let ctx;
 function setup() {
   frameRate(2340);
   TARGETCOLOR = color(255,255,255);
-  BACKGROUNDCOLOR = color(7,7,7);
+  BACKGROUNDCOLOR = color(40,40,40);
   MOUSECOLOR = color(255,255,255);
-  BLACK = color(7,7,7);
+  BLACK = color(24,24,24);
 	
 console.log('new2');
   createCanvas(W, H);
